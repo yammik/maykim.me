@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700|Josefin+Slab:300,400,600,700&display=swap");
+
+// convert px to em
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
+
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+  @if $mq2 == false {
+    @media ($maxmin: $mq01) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $mq01) and (max-width: $mq2) {
+      @content;
+    }
+  }
+}
+
+// query breakpoint variables
+$lg: 1170px;
+$md: 1024px;
+$sm: 640px;
+$xs: 480px;
+
+// responsive font size mixin
+@mixin font-size-map($font-size-map) {
+  @each $breakpoint, $font-size in $font-size-map {
+    @if $breakpoint == null {
+      font-size: $font-size;
+    } @else {
+      @include breakpoint($breakpoint) {
+        font-size: $font-size;
+      }
+    }
+  }
+}
+
+// font sizes
+$html-font-size: (
+  null: 20px,
+  $md: 18px,
+  $sm: 16px,
+  $xs: 14px
+);
+
+$paragraph-font-size: (
+  null: 18px,
+  $lg: 17px,
+  $md: 16px,
+  $sm: 15px,
+  $xs: 14px
+);
+
+// body font size
+$browser-context: 16;
+
+// typography scale
+$body-font-size: (
+  null: 16,
+  $md: 15,
+  $sm: 14,
+  $xs: 13
+);
+$h1-font-size: (
+  null: 72
+);
+$h2-font-size: (
+  null: 24px
+);
+
+// unitless line height mixin
+@mixin line-height($font-size, $line-height: $font-size) {
+  line-height: $line-height/$font-size;
+}
+
+@function line-height($font-size, $line-height: $font-size) {
+  @return $line-height/$font-size;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  font-size: em(16);
+  @include font-size-map($html-font-size);
+}
+
+p {
+  @include font-size-map($paragraph-font-size);
+}
+
+* {
+  font-family: "Josefin Slab", serif;
+  font-weight: 400;
+  color: rgb(118, 118, 118);
+  font-size: 1.6rem;
+}
