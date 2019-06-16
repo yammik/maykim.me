@@ -12,8 +12,8 @@ export default function Landing() {
         </NameWrapper>
         <text.SubHeading>Software Engineer</text.SubHeading>
       </Wrapper>
-      <wrappers.BlueOverlay height={20} bottom={25} />
-      <wrappers.BlueOverlay height={35} bottom={35} />
+      <wrappers.BlueTail slant="top" />
+      <wrappers.BlueTail />
     </wrappers.Blue>
   );
 }

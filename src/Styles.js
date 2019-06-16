@@ -2,16 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const colors = {
-  lBlue: "rgba(205, 218, 235, 0.6)",
-  lBlueFaded: "rgba(205, 218, 235, 0.3)",
-  dBlue: "rgba(153, 179, 227, 0.6)",
-  dBlueFaded: "rgba(153, 179, 227, 0.3)",
-  blueGreen: "rgba(129, 177, 156, 0.6)",
-  blueGreenFaded: "rgba(129, 177, 156, 0.3)",
-  green: "rgba(222, 233, 228, 0.6)",
-  greenFaded: "rgba(222, 233, 228, 0.3)",
-  white: "rgba(255,255,255, 0.6)",
-  whiteFaded: "rgba(255,255,255, 0.3)"
+  lBlue: "rgba(205, 218, 235, 0.3)",
+  dBlue: "rgba(153, 179, 227, 0.3)",
+  blueGreen: "rgba(129, 177, 156, 0.3)",
+  green: "rgba(222, 233, 228, 0.3)",
+  white: "rgba(255,255,255, 0.3)"
 };
 
 const ContentWrapper = styled.div`
@@ -33,8 +28,8 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const OverlayWrapper = styled.div`
-  bottom: -3rem;
+const Wrapper = styled.div`
+  bottom: -2rem;
   left: 0;
   position: absolute;
   padding: 5rem;
@@ -48,66 +43,49 @@ const OverlayWrapper = styled.div`
     z-index: -${({ order }) => order};
     content: "";
     position: absolute;
-    top: 0;
+    top: ${({ slant }) => (slant === "top" ? 0 : `2rem`)};
     left: 0;
     width: 0;
-    bottom: -${({ bottom }) => bottom}vw;
-    border-left: 100vw solid ${({ color }) => color};
-    border-bottom: ${({ height }) => height}vw solid transparent;
+    bottom: ${({ slant = "bottom" }) => (slant === "top" ? `-7rem` : `-10rem`)};
+    border-left: ${({ slant = "bottom", color }) =>
+      slant === "top" ? "none" : `100vw solid ${color}`};
+    border-bottom: ${({ slant = "bottom" }) =>
+      slant === "top" ? 0 : `6rem solid transparent`};
+    border-right: ${({ slant = "bottom", color }) =>
+      slant === "top" ? `100vw solid ${color}` : "none"};
+    border-top: ${({ slant = "bottom" }) =>
+      slant === "top" ? `6rem solid transparent` : 0};
   }
 `;
 
 export const wrappers = {
-  Blue: props => (
-    <ContentWrapper order={1} color={colors.lBlue}>
+  Blue: props => <ContentWrapper order={1}>{props.children}</ContentWrapper>,
+  BlueTail: props => (
+    <Wrapper {...props} order={1} color={colors.lBlue}>
       {props.children}
-    </ContentWrapper>
+    </Wrapper>
   ),
-  BlueOverlay: props => (
-    <OverlayWrapper {...props} order={1} color={colors.lBlueFaded}>
+  Bluer: props => <ContentWrapper order={2}>{props.children}</ContentWrapper>,
+  BluerTail: props => (
+    <Wrapper {...props} order={2} color={colors.dBlue}>
       {props.children}
-    </OverlayWrapper>
-  ),
-  Bluer: props => (
-    <ContentWrapper order={2} color={colors.dBlue}>
-      {props.children}
-    </ContentWrapper>
-  ),
-  BluerOverlay: props => (
-    <OverlayWrapper order={2} color={colors.dBlueFaded}>
-      {props.children}
-    </OverlayWrapper>
+    </Wrapper>
   ),
   BlueGreen: props => (
-    <ContentWrapper order={3} color={colors.blueGreen}>
-      {props.children}
-    </ContentWrapper>
+    <ContentWrapper order={3}>{props.children}</ContentWrapper>
   ),
-  BlueGreenOverlay: props => (
-    <OverlayWrapper order={3} color={colors.blueGreenFaded}>
+  BlueGreenTail: props => (
+    <Wrapper {...props} order={3} color={colors.blueGreen}>
       {props.children}
-    </OverlayWrapper>
+    </Wrapper>
   ),
-  Green: props => (
-    <ContentWrapper order={4} color={colors.green}>
+  Green: props => <ContentWrapper order={4}>{props.children}</ContentWrapper>,
+  GreenTail: props => (
+    <Wrapper {...props} order={4} color={colors.green}>
       {props.children}
-    </ContentWrapper>
+    </Wrapper>
   ),
-  GreenOverlay: props => (
-    <OverlayWrapper order={4} color={colors.greenFaded}>
-      {props.children}
-    </OverlayWrapper>
-  ),
-  White: props => (
-    <ContentWrapper order={5} color={colors.white}>
-      {props.children}
-    </ContentWrapper>
-  ),
-  WhiteOverlay: props => (
-    <OverlayWrapper order={5} color={colors.whiteFaded}>
-      {props.children}
-    </OverlayWrapper>
-  )
+  White: props => <ContentWrapper order={1}>{props.children}</ContentWrapper>
 };
 
 export const EvenSpace = styled.div`

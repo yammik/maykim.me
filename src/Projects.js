@@ -5,6 +5,8 @@ export default function Projects() {
   return (
     <wrappers.Bluer>
       <text.Heading>Projects</text.Heading>
+      <wrappers.BluerTail slant="top" />
+      <wrappers.BluerTail />
     </wrappers.Bluer>
   );
 }
