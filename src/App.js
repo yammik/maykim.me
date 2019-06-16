@@ -7,7 +7,7 @@ import Profile from "./Profile";
 import Blogs from "./Blogs";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
-import { Hamburger } from "./Styles";
+import Hamburger from "./Hamburger";
 
 function App() {
   return (

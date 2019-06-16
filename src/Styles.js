@@ -30,37 +30,6 @@ export const Line = styled.div`
   background-color: rgb(118, 118, 118);
 `;
 
-const Bar = styled.div`
-  width: 100%;
-  height: 4px;
-  border-radius: 16%;
-  background-color: rgb(118, 118, 118);
-
-  @media only screen and (max-width: 414px) {
-    height: 2px;
-  }
-`;
-
-export const Hamburger = () => (
-  <HamburgerWrapper direction="column">
-    <Bar />
-    <Bar />
-    <Bar />
-  </HamburgerWrapper>
-);
-
-const HamburgerWrapper = styled(EvenSpace)`
-  width: 30px;
-  height: 28px;
-  position: fixed;
-  right: 0;
-
-  @media only screen and (max-width: 414px) {
-    width: 18px;
-    height: 16px;
-  }
-`;
-
 export const text = {
   Heading: styled.h2`
     font-family: "Josefin Sans", sans-serif;
