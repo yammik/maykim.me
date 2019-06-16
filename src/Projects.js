@@ -1,12 +1,12 @@
 import React from "react";
-import { text, wrappers } from "./Styles";
+import { text, wrappers, ContentWrapper } from "./Styles";
 
 export default function Projects() {
   return (
-    <wrappers.Bluer>
+    <ContentWrapper>
       <text.Heading>Projects</text.Heading>
       <wrappers.BluerTail slant="top" />
       <wrappers.BluerTail />
-    </wrappers.Bluer>
+    </ContentWrapper>
   );
 }

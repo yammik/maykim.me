@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { text, wrappers, EvenSpace } from "./Styles";
+import { text, wrappers, EvenSpace, ContentWrapper } from "./Styles";
 
 export default function Landing() {
   return (
-    <wrappers.Blue>
+    <ContentWrapper>
+      <SocialMediaWrapper>
+        <Handle>yammik @</Handle>
+      </SocialMediaWrapper>
       <Wrapper>
         <NameWrapper>
           <text.Heading>MAY</text.Heading>
@@ -12,11 +15,33 @@ export default function Landing() {
         </NameWrapper>
         <text.SubHeading>Software Engineer</text.SubHeading>
       </Wrapper>
-      <wrappers.BlueTail slant="top" />
-      <wrappers.BlueTail />
-    </wrappers.Blue>
+      <BlueWrapper slant="top" />
+      <BlueWrapper />
+    </ContentWrapper>
   );
 }
+
+const BlueWrapper = styled(wrappers.BlueTail)`
+  &:after {
+    border-top: 0;
+    top: 0;
+  }
+`;
+
+const SocialMediaWrapper = styled.div`
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const Handle = styled.span`
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  width: auto;
+`;
 
 const Wrapper = styled.div`
   margin-left: 4rem;

@@ -1,10 +1,10 @@
 import React from "react";
-import { text, wrappers } from "./Styles";
+import { text, ContentWrapper } from "./Styles";
 
 export default function About() {
   return (
-    <wrappers.White>
+    <ContentWrapper>
       <text.Heading>About me</text.Heading>
-    </wrappers.White>
+    </ContentWrapper>
   );
 }

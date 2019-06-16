@@ -9,7 +9,7 @@ const colors = {
   white: "rgba(255,255,255, 0.3)"
 };
 
-const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div`
   padding: 5rem;
   padding-bottom: 0;
   z-index: -${({ order }) => order};
@@ -59,33 +59,26 @@ const Wrapper = styled.div`
 `;
 
 export const wrappers = {
-  Blue: props => <ContentWrapper order={1}>{props.children}</ContentWrapper>,
   BlueTail: props => (
     <Wrapper {...props} order={1} color={colors.lBlue}>
       {props.children}
     </Wrapper>
   ),
-  Bluer: props => <ContentWrapper order={2}>{props.children}</ContentWrapper>,
   BluerTail: props => (
     <Wrapper {...props} order={2} color={colors.dBlue}>
       {props.children}
     </Wrapper>
-  ),
-  BlueGreen: props => (
-    <ContentWrapper order={3}>{props.children}</ContentWrapper>
   ),
   BlueGreenTail: props => (
     <Wrapper {...props} order={3} color={colors.blueGreen}>
       {props.children}
     </Wrapper>
   ),
-  Green: props => <ContentWrapper order={4}>{props.children}</ContentWrapper>,
   GreenTail: props => (
     <Wrapper {...props} order={4} color={colors.green}>
       {props.children}
     </Wrapper>
-  ),
-  White: props => <ContentWrapper order={1}>{props.children}</ContentWrapper>
+  )
 };
 
 export const EvenSpace = styled.div`
