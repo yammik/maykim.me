@@ -4,13 +4,16 @@ import { text, wrappers, EvenSpace } from "./Styles";
 
 export default function Landing() {
   return (
-    <wrappers.Blue>
-      <NameWrapper>
-        <text.Heading>MAY</text.Heading>
-        <text.Heading>KIM</text.Heading>
-      </NameWrapper>
-      <text.SubHeading>Software Engineer</text.SubHeading>
-    </wrappers.Blue>
+    <>
+      <wrappers.Blue>
+        <NameWrapper>
+          <text.Heading>MAY</text.Heading>
+          <text.Heading>KIM</text.Heading>
+        </NameWrapper>
+        <text.SubHeading>Software Engineer</text.SubHeading>
+        <wrappers.BlueOverlay />
+      </wrappers.Blue>
+    </>
   );
 }
 
