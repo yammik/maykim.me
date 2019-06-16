@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { text, wrappers, EvenSpace, ContentWrapper } from "./Styles";
+import * as Icons from "./svg/icons";
 
 export default function Landing() {
   return (
     <ContentWrapper>
       <SocialMediaWrapper>
+        <Icons.GitHubSmall />
+        <Icons.EmailSmall />
+        <Icons.LinkedInSmall />
+        <Icons.TwitterSmall />
         <Handle>yammik @</Handle>
       </SocialMediaWrapper>
       <Wrapper>
@@ -32,6 +37,7 @@ const SocialMediaWrapper = styled.div`
   margin: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -40,6 +46,7 @@ const SocialMediaWrapper = styled.div`
 const Handle = styled.span`
   writing-mode: vertical-lr;
   transform: rotate(180deg);
+  font-size: 1rem;
   width: auto;
 `;
 

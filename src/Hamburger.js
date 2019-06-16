@@ -1,19 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Hamburger as Icon } from "./svg/icons";
+import { HamburgerIcon } from "./svg/icons";
 
 export default function Hamburger() {
   return (
     <HamburgerWrapper>
-      <StyledIcon />
+      <HamburgerIcon />
     </HamburgerWrapper>
   );
 }
-
-const StyledIcon = styled(Icon)`
-  width: 1.4rem;
-`;
 
 const HamburgerWrapper = styled.div`
   margin: 4rem 3rem;
