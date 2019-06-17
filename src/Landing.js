@@ -15,8 +15,8 @@ export default function Landing() {
       </SocialMediaWrapper>
       <Wrapper>
         <NameWrapper>
-          <text.Heading>MAY</text.Heading>
-          <text.Heading>KIM</text.Heading>
+          <Name>MAY</Name>
+          <Name>KIM</Name>
         </NameWrapper>
         <text.SubHeading>Software Engineer</text.SubHeading>
       </Wrapper>
@@ -25,6 +25,11 @@ export default function Landing() {
     </ContentWrapper>
   );
 }
+
+const Name = styled(text.Heading)`
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 800;
+`;
 
 const BlueWrapper = styled(wrappers.BlueTail)`
   &:after {
@@ -51,7 +56,7 @@ const Handle = styled.span`
 `;
 
 const Wrapper = styled.div`
-  margin-left: 4rem;
+  margin-left: 6rem;
   margin-top: 6rem;
 `;
 

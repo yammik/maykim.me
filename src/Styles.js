@@ -86,11 +86,11 @@ const Wrapper = styled.div`
     top: ${({ slant }) => (slant === "top" ? 0 : `2rem`)};
     left: 0;
     width: 0;
-    bottom: ${({ slant = "bottom" }) => (slant === "top" ? `-7rem` : `-10rem`)};
+    bottom: ${({ slant = "bottom" }) => (slant === "top" ? `-7rem` : `-12rem`)};
     border-left: ${({ slant = "bottom", color }) =>
       slant === "top" ? "none" : `100vw solid ${color}`};
     border-bottom: ${({ slant = "bottom" }) =>
-      slant === "top" ? 0 : `6rem solid transparent`};
+      slant === "top" ? 0 : `12rem solid transparent`};
     border-right: ${({ slant = "bottom", color }) =>
       slant === "top" ? `100vw solid ${color}` : "none"};
     border-top: ${({ slant = "bottom" }) =>
@@ -131,7 +131,7 @@ export const text = {
   Heading: styled.h2`
     font-family: "Josefin Slab", serif;
     font-weight: 600;
-    font-size: 3rem; /* 48 px */
+    font-size: 2.4rem; /* 48 px */
     margin: 0;
   `,
   SubHeading: styled.h4`
