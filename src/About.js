@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import {
   text,
   ContentWrapper,
   SectionNumber,
   SectionHeaderWrapper,
-  Line,
   CoolLine
 } from "./Styles";
 

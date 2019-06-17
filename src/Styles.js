@@ -32,13 +32,15 @@ export const SectionHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0;
+  margin-left: 36%;
 `;
 
-export const Line = styled.div`
+const Line = styled.div`
   width: ${({ width = 0 }) => `${width}rem`};
   border-bottom: 1px solid #767676;
-  transition: width 1.5s ease-in-out;
+  transition: width 1.2s ease-in-out;
+  margin-bottom: 1rem;
 `;
 
 export function CoolLine() {
@@ -127,8 +129,8 @@ export const EvenSpace = styled.div`
 
 export const text = {
   Heading: styled.h2`
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 800;
+    font-family: "Josefin Slab", serif;
+    font-weight: 600;
     font-size: 3rem; /* 48 px */
     margin: 0;
   `,
