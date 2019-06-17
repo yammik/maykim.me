@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const colors = {
@@ -27,6 +27,44 @@ export const ContentWrapper = styled.div`
     border-right: 100vw solid transparent;
   }
 `;
+
+export const SectionHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+`;
+
+export const Line = styled.div`
+  width: ${({ width = 0 }) => `${width}rem`};
+  border-bottom: 1px solid #767676;
+  transition: width 1.5s ease-in-out;
+`;
+
+export function CoolLine() {
+  const ref = useRef();
+  const [lineWidth, setLineWidth] = useState(0);
+
+  useEffect(() => {
+    function checkPos() {
+      const { y } = ref.current.getBoundingClientRect();
+      if (window.innerHeight > y && y > 0) {
+        setLineWidth(10);
+      } else {
+        setLineWidth(0);
+      }
+    }
+
+    checkPos();
+    window.addEventListener("scroll", checkPos);
+
+    return () => {
+      window.removeEventListener("scroll", checkPos);
+    };
+  }, []);
+
+  return <Line ref={ref} width={lineWidth} />;
+}
 
 const Wrapper = styled.div`
   bottom: -2rem;
@@ -86,10 +124,6 @@ export const EvenSpace = styled.div`
   flex-direction: ${({ direction }) => direction};
   justify-content: space-between;
 `;
-export const Line = styled.div`
-  height: ${({ thiccness }) => thiccness}px;
-  background-color: rgb(118, 118, 118);
-`;
 
 export const text = {
   Heading: styled.h2`
@@ -112,3 +146,8 @@ export const text = {
     text-align: center;
   `
 };
+
+export const SectionNumber = styled.div`
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+`;
