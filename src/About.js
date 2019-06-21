@@ -6,7 +6,8 @@ import {
   ContentWrapper,
   SectionNumber,
   SectionHeaderWrapper,
-  CoolLine
+  CoolLine,
+  SectionBodyWrapper
 } from "./Styles";
 
 export default function About() {
@@ -34,9 +35,11 @@ export default function About() {
           <RightParagraph>
             Hey there! I'm May. Software engineer Lorem ipsum dolor sit amet,
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            labore et dolore magna aliqua.
+          </RightParagraph>
+          <RightParagraph>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
           </RightParagraph>
         </TextWrapper>
       </SectionBodyWrapper>
@@ -45,9 +48,14 @@ export default function About() {
 }
 
 const TextWrapper = styled.div`
-  margin: 3rem 0;
+  margin: 0;
+  margin-top: 3rem;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftParagraph = styled.div`
@@ -62,15 +70,19 @@ const RightParagraph = styled.div`
   font-weight: 300;
   font-size: 1.2rem;
   text-align: right;
-`;
+  margin-top: 0;
+  margin-left: 1rem;
 
-export const SectionBodyWrapper = styled.div`
-  padding: 4rem 3rem;
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
 `;
 
 const SkillsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
+  margin: 4rem 0;
 `;
 
 const SkillWrapper = styled.div`
@@ -89,6 +101,7 @@ const BlockDesc = styled.span`
   font-family: "Josefin Slab", serif;
   font-weight: 400;
   font-size: 1rem;
+  text-align: center;
 `;
 
 function Skill({ name }) {

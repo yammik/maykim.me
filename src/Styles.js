@@ -10,11 +10,11 @@ const colors = {
 };
 
 export const ContentWrapper = styled.div`
-  padding: 5rem;
+  padding: 4rem;
   padding-bottom: 0;
   z-index: -${({ order }) => order};
   position: relative;
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
 
   &:after {
     z-index: -${({ order }) => order};
@@ -39,7 +39,7 @@ export const SectionHeaderWrapper = styled.div`
 const Line = styled.div`
   width: ${({ width = 0 }) => `${width}rem`};
   border-bottom: 1px solid #767676;
-  transition: width 1.2s ease-in-out;
+  transition: width 1s ease-out;
   margin-bottom: 1rem;
 `;
 
@@ -146,10 +146,30 @@ export const text = {
     font-weight: bold;
     font-size: 3rem; /* 48 px */
     text-align: center;
+  `,
+  ProjectTitle: styled.h3`
+    font-family: "Josefin Slab", serif;
+    font-weight: 600;
+    font-size: 2rem; /* 48 px */
+    margin: 0;
+  `,
+  ProjectTagline: styled.h4`
+    font-family: "Josefin Slab", serif;
+    font-weight: 400;
+    font-size: 1rem; /* 32 px */
+    letter-spacing: 0rem;
+    margin: 0;
   `
 };
 
 export const SectionNumber = styled.div`
   font-family: "Josefin Sans", sans-serif;
   font-weight: 200;
+`;
+
+export const SectionBodyWrapper = styled.div`
+  padding-bottom: 4rem;
+  @media (max-width: 480px) {
+    padding: 2rem 0.5rem;
+  }
 `;
