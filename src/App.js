@@ -21,7 +21,25 @@ function App() {
         "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
     },
     {
-      title: "send doods",
+      title: "title dos",
+      desc: `Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua.`,
+      tagline: "because example",
+      imgURL:
+        "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
+    },
+    {
+      title: "title trois",
+      desc: `Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua.`,
+      tagline: "because example",
+      imgURL:
+        "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
+    },
+    {
+      title: "send quads",
       desc: `Lorem ipsum dolor sit amet,
       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua.`,
