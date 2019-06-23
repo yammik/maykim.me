@@ -43,7 +43,7 @@ const SocialMediaWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 `;

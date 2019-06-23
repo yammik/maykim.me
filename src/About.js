@@ -19,28 +19,28 @@ export default function About() {
         <text.Heading>About me</text.Heading>
       </SectionHeaderWrapper>
       <SectionBodyWrapper>
-        <SkillsWrapper>
+        <IconsWrapper>
           <Skill name="something one" />
           <Skill name="something two" />
           <Skill name="something three" />
           <Skill name="something four" />
           <Skill name="something five" />
-        </SkillsWrapper>
+        </IconsWrapper>
         <TextWrapper>
           <LeftParagraph>
             Hey there! I'm May. Software engineer Lorem ipsum dolor sit amet,
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua.
           </LeftParagraph>
-          <RightParagraph>
+          <Paragraph>
             Hey there! I'm May. Software engineer Lorem ipsum dolor sit amet,
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua.
-          </RightParagraph>
-          <RightParagraph>
+          </Paragraph>
+          <Paragraph>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
-          </RightParagraph>
+          </Paragraph>
         </TextWrapper>
       </SectionBodyWrapper>
     </ContentWrapper>
@@ -63,15 +63,17 @@ const LeftParagraph = styled.div`
   font-weight: 600;
   font-size: 1.2rem;
   text-align: right;
+  line-height: 1.8rem;
 `;
 
-const RightParagraph = styled.div`
+export const Paragraph = styled.div`
   font-family: "Josefin Slab", serif;
   font-weight: 300;
   font-size: 1.2rem;
   text-align: right;
   margin-top: 0;
   margin-left: 1rem;
+  line-height: 1.8rem;
 
   @media (max-width: 640px) {
     margin-top: 1rem;
@@ -79,7 +81,7 @@ const RightParagraph = styled.div`
   }
 `;
 
-const SkillsWrapper = styled.div`
+const IconsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 4rem 0;
@@ -91,7 +93,7 @@ const SkillWrapper = styled.div`
   align-items: center;
 `;
 
-const Block = styled.div`
+export const Block = styled.div`
   width: 2rem;
   height: 2rem;
   background: rgb(188, 188, 188);

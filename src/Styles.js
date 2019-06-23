@@ -10,13 +10,13 @@ const colors = {
 };
 
 export const ContentWrapper = styled.div`
-  padding: 4rem;
+  padding: 4rem 14vw;
   padding-bottom: 0;
   z-index: -${({ order }) => order};
   position: relative;
   margin-bottom: 1rem;
 
-  &:after {
+  @media (max-width: ) &:after {
     z-index: -${({ order }) => order};
     content: "";
     position: absolute;
