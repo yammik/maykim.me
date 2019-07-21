@@ -12,7 +12,8 @@ export default function Hamburger() {
 }
 
 const HamburgerWrapper = styled.div`
-  margin: 4rem 3rem;
+  top: 4rem;
+  right: 2rem;
   position: fixed;
-  right: 0;
+  z-index: 99;
 `;

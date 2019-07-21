@@ -4,8 +4,8 @@ import styled from "styled-components";
 const colors = {
   lBlue: "rgba(205, 218, 235, 0.3)",
   dBlue: "rgba(153, 179, 227, 0.3)",
-  blueGreen: "rgba(129, 177, 156, 0.3)",
-  green: "rgba(222, 233, 228, 0.3)",
+  blueGreen: "rgba(209, 223, 226, 0.6)",
+  green: "rgba(222, 233, 228, 0.4)",
   white: "rgba(255,255,255, 0.3)"
 };
 
@@ -152,11 +152,14 @@ export const text = {
     font-weight: 600;
     font-size: 2rem; /* 48 px */
     margin: 0;
+    @media (max-width: 640px) {
+      font-size: 1.5rem;
+    }
   `,
-  ProjectTagline: styled.h4`
+  ProjectTagline: styled.p`
     font-family: "Josefin Slab", serif;
     font-weight: 400;
-    font-size: 1rem; /* 32 px */
+    font-size: 0.6rem; /* 32 px */
     letter-spacing: 0rem;
     margin: 0;
   `

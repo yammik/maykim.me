@@ -28,18 +28,19 @@ export default function About() {
         </IconsWrapper>
         <TextWrapper>
           <LeftParagraph>
-            Hey there! I'm May. Software engineer Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
+            Hi! I'm a junior engineer at Parsec Gaming. I am also in charge of
+            all the bad jokes in the office.
           </LeftParagraph>
           <Paragraph>
-            Hey there! I'm May. Software engineer Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
+            My work at Parsec includes the client React app (Typescript), mobile
+            app (Swift/ObjC/Java), API (Go), as well as Discord bot (Python).
+            Everyone does a little bit of everything here. Talk about startup.
           </Paragraph>
           <Paragraph>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+            Prior to becoming an coding nerd, I was a science nerd in
+            microbiological research. The domain knowledge from that is not so
+            relevant professionally anymore, but it still shapes a lot of my
+            habits and makes fun conversations.
           </Paragraph>
         </TextWrapper>
       </SectionBodyWrapper>
@@ -53,7 +54,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -75,7 +76,7 @@ export const Paragraph = styled.div`
   margin-left: 1rem;
   line-height: 1.8rem;
 
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     margin-top: 1rem;
     margin-left: 0;
   }

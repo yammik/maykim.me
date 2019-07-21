@@ -5,7 +5,8 @@ import {
   ContentWrapper,
   SectionNumber,
   SectionHeaderWrapper,
-  CoolLine
+  CoolLine,
+  SectionBodyWrapper
 } from "./Styles";
 
 export default function Gallery() {
@@ -16,6 +17,7 @@ export default function Gallery() {
         <CoolLine />
         <text.Heading>Gallery</text.Heading>
       </SectionHeaderWrapper>
+      <SectionBodyWrapper>(Coming soon)</SectionBodyWrapper>
     </ContentWrapper>
   );
 }

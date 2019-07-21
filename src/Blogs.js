@@ -5,7 +5,8 @@ import {
   ContentWrapper,
   SectionHeaderWrapper,
   SectionNumber,
-  CoolLine
+  CoolLine,
+  SectionBodyWrapper
 } from "./Styles";
 
 export default function Blogs() {
@@ -16,6 +17,7 @@ export default function Blogs() {
         <CoolLine />
         <text.Heading>Blogs</text.Heading>
       </SectionHeaderWrapper>
+      <SectionBodyWrapper>(Coming soon)</SectionBodyWrapper>
       <wrappers.GreenTail slant="top" />
       <wrappers.GreenTail />
     </ContentWrapper>

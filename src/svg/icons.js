@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Hamburger } from "./hamburger.svg";
 import { ReactComponent as Email } from "./email.svg";
@@ -6,19 +5,15 @@ import { ReactComponent as GitHub } from "./github.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
 
-export const icons = {
-  GitHubSmall: () => <GitHubSmall />,
-  Hamburger: () =>
-    styled(Hamburger)`
-      width: 1.4rem;
-    `,
-  EmailSmall: () => <EmailSmall />,
-  LinkedInSmall: () => <LinkedInSmall />,
-  TwitterSmall: () => <TwitterSmall />
-};
-
 export const HamburgerIcon = styled(Hamburger)`
   width: 1.4rem;
+  cursor: pointer;
+  fill: #767676;
+  transition: fill 0.4s ease-out;
+
+  &:hover {
+    fill: #777777;
+  }
 `;
 
 export const GitHubSmall = styled(GitHub)`

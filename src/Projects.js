@@ -14,38 +14,67 @@ export default function Projects() {
   const projects = [
     {
       title: "Lunch Roulette",
-      desc: `Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.`,
-      tagline:
-        "can you really afford 5 minutes just to pick what to eat for lunch?",
+      desc: (
+        <DescWrapper>
+          <p>
+            Another restaurant finder app, but with less options for a reason:
+            choice paralysis. Sometimes your best option is to just go with it.
+          </p>
+          <p>Check out danger mode if you're feeling...well...dangerous.</p>
+          <p>Uses React, Styled Components, and Yelp API.</p>
+        </DescWrapper>
+      ),
+      tagline: "for the indecisive",
       imgURL:
         "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
     },
     {
       title: "SandboCSS",
-      desc: `Pun intended. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.`,
+      desc: (
+        <DescWrapper>
+          <p>Yup that's a pun. (hahahahah)</p>
+          <p>
+            CSS is overwhelming with its many properties and parents and
+            children and flow and flex and and and whaaaat?
+          </p>
+          <p>
+            You can play around with each property independently, see what
+            values are available for each, with nested divs and all. Totally
+            codeless.
+          </p>
+          <p>
+            Built with React, Styled Components, RnD, and
+            react-copy-to-clipboard.
+          </p>
+        </DescWrapper>
+      ),
       tagline: "Codeless CSS sandbox",
       imgURL:
         "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
     },
     {
-      title: "Send Doods",
-      desc: `Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.`,
-      tagline: "picture charades",
-      imgURL:
-        "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
-    },
-    {
       title: "Wanderlost",
-      desc: `Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.`,
-      tagline: "for those who want to see the world but have no time or money",
+      desc: (
+        <DescWrapper>
+          <p>
+            When I was a grad student, I wanted to see the world like all of my
+            friends were, but I had no time or money to scratch my wanderlust.
+          </p>
+          <p>
+            So I virtually traveled the world via Google Maps streetview. It's
+            basically the same thing, man. Shut up, it's not pathetic. What? I'm
+            not crying, you're crying...
+          </p>
+          <p>
+            In this app, you are a random person dropped off in a random region
+            in the world (where streetview is available), with variable stats.
+            Your goal is to find a randomly designated destination with a
+            limited number of steps.
+          </p>
+          <p>Uses Javascript, and Google Maps API.</p>
+        </DescWrapper>
+      ),
+      tagline: "cost/time-efficient way to see the world",
       imgURL:
         "https://www.google.com/logos/doodles/2019/2019-womens-world-cup-day-14-5612233271279616-s.png"
     }
@@ -62,7 +91,7 @@ export default function Projects() {
         {projects.map((project, i) => {
           return (
             <ProjectItem
-              key={i}
+              key={`proj-${i}`}
               project={project}
               side={i % 2 === 0 ? "right" : "left"}
             />
@@ -136,7 +165,7 @@ const ImgTitleWrapper = styled.div`
 `;
 
 const ProjectWrapper = styled.div`
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 5;
   opacity: ${({ offset }) => (offset ? 0 : 1)};
   position: relative;
@@ -145,7 +174,7 @@ const ProjectWrapper = styled.div`
   margin: 6rem 0;
   justify-content: space-between;
   transition: opacity 1.5s;
-
+  height: fit-content;
   -webkit-transition: opacity 1.5s;
 
   @media (max-width: 640px) {
@@ -189,12 +218,23 @@ const ProjectDesc = styled.div`
   text-align: ${({ side }) => side};
   transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;
+
+  @media (max-width: 640px) {
+    margin: 1rem 0;
+  }
 `;
 
 const ProjectImage = styled.img`
-  width: 34vw;
+  width: 480px;
 
-  @media (max-width: 640px) {
-    width: 54vw;
+  @media (max-width: 1024px) {
+    width: 300px;
   }
+  @media (max-width: 840px) {
+    width: 240px;
+  }
+`;
+
+const DescWrapper = styled.div`
+  flex-direction: column;
 `;
