@@ -12,7 +12,7 @@ import {
 
 export default function About() {
   return (
-    <ContentWrapper>
+    <ContentWrapper id="about">
       <SectionHeaderWrapper>
         <SectionNumber>01</SectionNumber>
         <CoolLine />
@@ -28,8 +28,8 @@ export default function About() {
         </IconsWrapper>
         <TextWrapper>
           <LeftParagraph>
-            Hi! I'm a junior engineer at Parsec Gaming. I am also in charge of
-            all the bad jokes in the office.
+            Hi! I'm a junior engineer at Parsec Gaming. I am in charge of all
+            the bad jokes in the office.
           </LeftParagraph>
           <Paragraph>
             My work at Parsec includes the client React app (Typescript), mobile
@@ -37,10 +37,11 @@ export default function About() {
             Everyone does a little bit of everything here. Talk about startup.
           </Paragraph>
           <Paragraph>
-            Prior to becoming an coding nerd, I was a science nerd in
-            microbiological research. The domain knowledge from that is not so
-            relevant professionally anymore, but it still shapes a lot of my
-            habits and makes fun conversations.
+            Prior to becoming an coding nerd, I was a science nerd in research
+            in microbiology. (This just means that I can talk about eczema for
+            hours) The domain knowledge from that is not so relevant
+            professionally anymore, but it still shapes a lot of my habits and
+            makes fun conversations.
           </Paragraph>
         </TextWrapper>
       </SectionBodyWrapper>
@@ -69,7 +70,7 @@ const LeftParagraph = styled.div`
 
 export const Paragraph = styled.div`
   font-family: "Josefin Slab", serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.2rem;
   text-align: right;
   margin-top: 0;

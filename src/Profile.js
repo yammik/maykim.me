@@ -18,15 +18,18 @@ export default function Profile() {
       contents: [
         {
           title: "Binghamton University",
-          body: "Graduate program in Biology"
-        },
-        {
-          title: "Binghamton University",
-          body: "Biology major, Linguistics minor"
+          body: (
+            // TODO: fix vert padding
+            // TODO: add stats: GPA?
+            <>
+              <p>Graduate program in Biology</p>
+              <p>Biology major, Linguistics minor</p>
+            </>
+          )
         },
         {
           title: "LaGuardia High School",
-          body: "Studio art major"
+          body: "Visual arts major"
         }
       ]
     },
@@ -40,18 +43,21 @@ export default function Profile() {
         },
         {
           title: "Binghamton University",
-          body: "Graduate teaching assistant"
-        },
-        {
-          title: "Binghamton University",
-          body: "Graduate research assistant"
+          body: (
+            // TODO: fix vert padding and style
+            // TODO: add stats: GPA?
+            <>
+              <p>Graduate research assistant</p>
+              <p>Graduate teaching assistant</p>
+            </>
+          )
         }
       ]
     }
   ];
 
   return (
-    <ContentWrapper>
+    <ContentWrapper id="profile">
       <SectionHeaderWrapper>
         <SectionNumber>03</SectionNumber>
         <CoolLine />
@@ -141,7 +147,7 @@ const Skills = () => {
   return (
     <SkillsWrapper>
       <Block />
-      <SectionTitle>Skills</SectionTitle>
+      <SectionTitle>Computer stuff</SectionTitle>
       {skills.map(skill => (
         <ItemBodyWrapper>
           <SkillName>{skill.name}</SkillName>

@@ -11,7 +11,7 @@ import {
 
 export default function Gallery() {
   return (
-    <ContentWrapper>
+    <ContentWrapper id="gallery">
       <SectionHeaderWrapper>
         <SectionNumber>05</SectionNumber>
         <CoolLine />

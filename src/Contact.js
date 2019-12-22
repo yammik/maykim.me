@@ -11,7 +11,7 @@ import {
 
 export default function Contact() {
   return (
-    <ContentWrapper>
+    <ContentWrapper id="contact">
       <SectionHeaderWrapper>
         <SectionNumber>04</SectionNumber>
         <CoolLine />

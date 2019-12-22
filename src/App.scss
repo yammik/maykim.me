@@ -92,6 +92,7 @@ html {
   font-size: em(16);
   overflow-x: hidden;
   @include font-size-map($html-font-size);
+  overscroll-behavior: none;
 }
 
 p {

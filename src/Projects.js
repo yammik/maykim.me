@@ -81,7 +81,7 @@ export default function Projects() {
   ];
 
   return (
-    <ContentWrapper>
+    <ContentWrapper id="projects">
       <SectionHeaderWrapper>
         <SectionNumber>02</SectionNumber>
         <CoolLine />
