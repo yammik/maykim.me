@@ -174,7 +174,7 @@ const ProjectWrapper = styled.div`
   margin: 6rem 0;
   justify-content: space-between;
   transition: opacity 1.5s;
-  height: fit-content;
+  /* height: fit-content; */
   -webkit-transition: opacity 1.5s;
 
   @media (max-width: 640px) {

@@ -21,3 +21,6 @@ export default function Gallery() {
     </ContentWrapper>
   );
 }
+
+// IG-style cards
+// Link Osprey site
