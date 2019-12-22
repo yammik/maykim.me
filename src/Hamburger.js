@@ -1,10 +1,13 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
-
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { HamburgerIcon } from "./svg/icons";
 
 export default function Hamburger() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  useEffect(() => {
+    menuIsOpen && setTimeout(() => setMenuIsOpen(false), 15 * 1000);
+  }, [menuIsOpen]);
 
   return (
     <Wrapper>
@@ -46,6 +49,8 @@ const MenuWrapper = styled.ul`
   padding: 1rem;
   margin: 0;
   transition: transform 0.2s ease-out;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
 `;
 
 const Wrapper = styled.div`
@@ -56,11 +61,12 @@ const Wrapper = styled.div`
 `;
 
 const StyledLi = styled.li`
+  cursor: pointer;
   list-style: none;
-  transition: transform 0.1s ease-out;
+  transition: color 0.3s ease-out;
   text-align: right;
   &:hover {
-    transform: scale(1.2);
+    color: rgba(153, 179, 227, 0.7);
   }
   &:not(:last-child) {
     margin-bottom: 0.5rem;

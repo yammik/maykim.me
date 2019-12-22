@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
-const colors = {
+export const colors = {
   lBlue: "rgba(205, 218, 235, 0.3)",
   dBlue: "rgba(153, 179, 227, 0.3)",
   blueGreen: "rgba(209, 223, 226, 0.6)",
